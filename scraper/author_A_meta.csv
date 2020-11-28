@@ -1,0 +1,141 @@
+ID,Title,Month,Year,URL
+1,"Graph indexing based on discriminative frequent structure analysis",December,2005,https://dl.acm.org/doi/10.1145/1114244.1114248
+2,"Document Clustering Using Locality Preserving Indexing",December,2005,https://dl.acm.org/doi/10.1109/TKDE.2005.198
+3,"Image clustering with tensor representation",November,2005,https://dl.acm.org/doi/10.1145/1101149.1101169
+4,"Making SVMs Scalable to Large Data Sets using Hierarchical Cluster Indexing",November,2005,https://dl.acm.org/doi/10.1007/s10618-005-0005-7
+5,"Community mining from multi-relational networks",October,2005,https://dl.acm.org/doi/10.5555/3121445.3121492
+6,"Efficient classification from multiple heterogeneous databases",October,2005,https://dl.acm.org/doi/10.5555/3121445.3121487
+7,"Efficient processing of ranked queries with sweeping selection",October,2005,https://dl.acm.org/doi/10.1007/11564126_54
+8,"Stream Cube: An Architecture for Multi-Dimensional Analysis of Data Streams",September,2005,https://dl.acm.org/doi/10.1007/s10619-005-3296-1
+9,"SOBER: statistical model-based bug localization",September,2005,https://dl.acm.org/doi/10.1145/1095430.1081753
+10,"Mining compressed frequent-pattern sets",August,2005,https://dl.acm.org/doi/10.5555/1083592.1083675
+11,"Mining hidden community in heterogeneous social networks",August,2005,https://dl.acm.org/doi/10.1145/1134271.1134280
+12,"Accelerating DNA sequencing-by-hybridization with noise",August,2005,https://dl.acm.org/doi/10.1145/1134030.1134037
+13,"An efficient multi-relational Naïve Bayesian classifier based on semantic relationship
+                     graph",August,2005,https://dl.acm.org/doi/10.1145/1090193.1090200
+14,"Parallel mining of closed sequential patterns",August,2005,https://dl.acm.org/doi/10.1145/1081870.1081937
+15,"Cross-relational clustering with user's guidance",August,2005,https://dl.acm.org/doi/10.1145/1081870.1081910
+16,"Mining closed relational graphs with connectivity constraints",August,2005,https://dl.acm.org/doi/10.1145/1081870.1081908
+17,"Summarizing itemset patterns: a profile-based approach",August,2005,https://dl.acm.org/doi/10.1145/1081870.1081907
+18,"A sampling-based framework for parallel data mining",June,2005,https://dl.acm.org/doi/10.1145/1065944.1065979
+19,"GraphMiner: a structural pattern-mining system for large disk-based graph databases and its applications",June,2005,https://dl.acm.org/doi/10.1145/1066157.1066273
+20,"Substructure similarity search in graph databases",June,2005,https://dl.acm.org/doi/10.1145/1066157.1066244
+21,"TSP: Mining top-k closed sequential patterns",May,2005,https://dl.acm.org/doi/10.5555/2993952.2994023
+22,"None",May,2005,https://dl.acm.org/doi/10.5555/1059825.1059829
+23,"TFP: An Efficient Algorithm for Mining Top-K Frequent Closed Itemsets",May,2005,https://dl.acm.org/doi/10.1109/TKDE.2005.81
+24,"Mining Evolving Customer-Product Relationships in Multi-dimensional Space",April,2005,https://dl.acm.org/doi/10.1109/ICDE.2005.88
+25,"Divide-and-Approximate: A Novel Constraint Push Strategy for Iceberg Cube Mining",March,2005,https://dl.acm.org/doi/10.1109/TKDE.2005.45
+26,"Mining coherent dense subgraphs across massive biological networks for functional
+                     discovery",January,2005,https://dl.acm.org/doi/10.1093/bioinformatics/bti1049
+27,"Scalable Construction of Topic Directory with Nonparametric Closed Termset Mining",November,2004,https://dl.acm.org/doi/10.5555/1032649.1033531
+28,"Mining Sequential Patterns by Pattern-Growth: The PrefixSpan Approach",November,2004,https://dl.acm.org/doi/10.1109/TKDE.2004.77
+29,"Mining thick skylines over large databases",September,2004,https://dl.acm.org/doi/10.5555/1053072.1053097
+30,"Mining condensed frequent-pattern bases",September,2004,https://dl.acm.org/doi/10.1007/s10115-003-0133-6
+31,"A framework for projected clustering of high dimensional data streams",August,2004,https://dl.acm.org/doi/10.5555/1316689.1316763
+32,"High-dimensional OLAP: a minimal cubing approach",August,2004,https://dl.acm.org/doi/10.5555/1316689.1316736
+33,"Mining scale-free networks using geodesic clustering",August,2004,https://dl.acm.org/doi/10.1145/1014052.1014146
+34,"Clustering moving objects",August,2004,https://dl.acm.org/doi/10.1145/1014052.1014129
+35,"IncSpan: incremental mining of sequential patterns in large database",August,2004,https://dl.acm.org/doi/10.1145/1014052.1014114
+36,"On demand classification of data streams",August,2004,https://dl.acm.org/doi/10.1145/1014052.1014110
+37,"Discovering complex matchings across web query interfaces: a correlation mining approach",August,2004,https://dl.acm.org/doi/10.1145/1014052.1014071
+38,"Mining Constrained Gradients in Large Databases",August,2004,https://dl.acm.org/doi/10.1109/TKDE.2004.28
+39,"MM-Cubing: Computing Iceberg Cubes by Factorizing the Lattice Space",June,2004,https://dl.acm.org/doi/10.5555/998688.1007124
+40,"Continuous K-Nearest Neighbor Search for Moving Objects",June,2004,https://dl.acm.org/doi/10.5555/998688.1007113
+41,"Mining complex matchings across Web query interfaces",June,2004,https://dl.acm.org/doi/10.1145/1008694.1008696
+42,"Graph indexing: a frequent structure-based approach",June,2004,https://dl.acm.org/doi/10.1145/1007568.1007607
+43,"Pushing Convertible Constraints in Frequent Itemset Mining",May,2004,https://dl.acm.org/doi/10.1023/B%3ADAMI.0000023674.74932.4c
+44,"From sequential pattern mining to structured pattern mining: a pattern-growth approach",May,2004,https://dl.acm.org/doi/10.1007/BF02944897
+45,"CrossMine: Efficient Classification Across Multiple Database Relations",March,2004,https://dl.acm.org/doi/10.5555/977401.978118
+46,"CrossMine: efficient classification across multiple database relations",March,2004,https://dl.acm.org/doi/10.1007/11615576_9
+47,"PEBL: Web Page Classification without Negative Examples",January,2004,https://dl.acm.org/doi/10.1109/TKDE.2004.1264823
+48,"Mining Frequent Patterns without Candidate Generation: A Frequent-Pattern Tree Approach",January,2004,https://dl.acm.org/doi/10.1023/B%3ADAMI.0000005258.31418.83
+49,"TSP: Mining Top-K Closed Sequential Patterns",November,2003,https://dl.acm.org/doi/10.5555/951949.952169
+50,"CoMine: Efficient Mining of Correlated Patterns",November,2003,https://dl.acm.org/doi/10.5555/951949.952125
+51,"Text classification from positive and unlabeled documents",November,2003,https://dl.acm.org/doi/10.1145/956863.956909
+52,"Star-cubing: computing iceberg cubes by top-down and bottom-up integration",September,2003,https://dl.acm.org/doi/10.5555/1315451.1315493
+53,"A framework for clustering evolving data streams",September,2003,https://dl.acm.org/doi/10.5555/1315451.1315460
+54,"Profile-Based Object Matching for Information Integration",September,2003,https://dl.acm.org/doi/10.1109/MIS.2003.1234770
+55,"Classifying large data sets using SVMs with hierarchical clusters",August,2003,https://dl.acm.org/doi/10.1145/956750.956786
+56,"CloseGraph: mining closed frequent graph patterns",August,2003,https://dl.acm.org/doi/10.1145/956750.956784
+57,"CLOSET+: searching for the best strategies for mining frequent closed itemsets",August,2003,https://dl.acm.org/doi/10.1145/956750.956779
+58,"Mining concept-drifting data streams using ensemble classifiers",August,2003,https://dl.acm.org/doi/10.1145/956750.956778
+59,"Discovering Compact and Highly Discriminative Features or Feature Combinations of
+                     Drug Activities Using Support Vector Machines",August,2003,https://dl.acm.org/doi/10.5555/937976.938048
+60,"Cancer classification using gene expression data",June,2003,https://dl.acm.org/doi/10.1016/S0306-4379%2802%2900072-8
+61,"Pushing Support Constraints Into Association Rules Mining",March,2003,https://dl.acm.org/doi/10.1109/TKDE.2003.1198396
+62,"Efficient Mining of Intertransaction Association Rules",January,2003,https://dl.acm.org/doi/10.1109/TKDE.2003.1161581
+63,"gSpan: Graph-Based Substructure Pattern Mining",December,2002,https://dl.acm.org/doi/10.5555/844380.844811
+64,"Mining Top.K Frequent Closed Patterns without Minimum Support",December,2002,https://dl.acm.org/doi/10.5555/844380.844747
+65,"On Computing Condensed Frequent Pattern Bases",December,2002,https://dl.acm.org/doi/10.5555/844380.844709
+66,"Mining sequential patterns with constraints in large databases",November,2002,https://dl.acm.org/doi/10.1145/584792.584799
+67,"Data Mining for Web Intelligence",November,2002,https://dl.acm.org/doi/10.1109/MC.2002.1046977
+68,"A template model for multidimensional inter-transactional association rules",October,2002,https://dl.acm.org/doi/10.1007/s00778-002-0069-6
+69,"CLARANS: A Method for Clustering Objects for Spatial Data Mining",September,2002,https://dl.acm.org/doi/10.1109/TKDE.2002.1033770
+70,"Quotient cube: how to summarize the semantics of a data cube",August,2002,https://dl.acm.org/doi/10.5555/1287369.1287436
+71,"Multi-dimensional regression analysis of time-series data streams",August,2002,https://dl.acm.org/doi/10.5555/1287369.1287398
+72,"Emerging scientific applications in data mining",August,2002,https://dl.acm.org/doi/10.1145/545151.545179
+73,"How can data mining help bio-data analysis? [extended abstract]",July,2002,https://dl.acm.org/doi/10.5555/3012333.3012335
+74,"PEBL: positive example based learning for Web page classification using SVM",July,2002,https://dl.acm.org/doi/10.1145/775047.775083
+75,"Mining frequent item sets by opportunistic projection",July,2002,https://dl.acm.org/doi/10.1145/775047.775081
+76,"CubeExplorer: online exploration of data cubes",June,2002,https://dl.acm.org/doi/10.1145/564691.564781
+77,"Mining long sequential patterns in a noisy environment",June,2002,https://dl.acm.org/doi/10.1145/564691.564738
+78,"Constrained frequent pattern mining: a pattern-growth view",June,2002,https://dl.acm.org/doi/10.1145/568574.568580
+79,"Top Down FP-Growth for Association Rule Mining",May,2002,https://dl.acm.org/doi/10.5555/646420.693824
+80,"Profit Mining: From Patterns to Actions",March,2002,https://dl.acm.org/doi/10.5555/645340.650209
+81,"Case studies: Public domain, multiple mining tasks systems: DBMiner",January,2002,https://dl.acm.org/doi/10.5555/778212.778293
+82,"Data mining tasks and methods: Rule discovery: characteristic rules",January,2002,https://dl.acm.org/doi/10.5555/778212.778262
+83,"H-Mine: Hyper-Structure Mining of Frequent Patterns in Large Databases",November,2001,https://dl.acm.org/doi/10.5555/645496.657873
+84,"CMAR: Accurate and Efficient Classification Based on Multiple Class-Association Rules",November,2001,https://dl.acm.org/doi/10.5555/645496.657866
+85,"Multi-dimensional sequential pattern mining",October,2001,https://dl.acm.org/doi/10.1145/502585.502600
+86,"RecTree: An Efficient Collaborative Filtering Method",September,2001,https://dl.acm.org/doi/10.5555/646110.756710
+87,"Mining top-n local outliers in large databases",August,2001,https://dl.acm.org/doi/10.1145/502512.502554
+88,"Efficient computation of Iceberg cubes with complex measures",June,2001,https://dl.acm.org/doi/10.1145/376284.375664
+89,"Constraint-based clustering in large databases",January,2001,https://dl.acm.org/doi/10.5555/645504.656273
+90,"Object-Based Selective Materialization for Efficient Implementation of Spatial Data
+                     Cubes",November,2000,https://dl.acm.org/doi/10.1109/69.895803
+91,"Beyond intratransaction association analysis: mining multidimensional intertransaction association rules",October,2000,https://dl.acm.org/doi/10.1145/358108.358114
+92,"AIM: Approximate Intelligent Matching for Time Series Data",September,2000,https://dl.acm.org/doi/10.5555/646109.679285
+93,"Efficient Rule-Based Attribute-Oriented Induction for Data Mining",September,2000,https://dl.acm.org/doi/10.1023/A%3A1008778107391
+94,"Geo-spatial clustering with user-specified constraints",August,2000,https://dl.acm.org/doi/10.5555/3012361.3012362
+95,"Mining frequent patterns without candidate generation",June,2000,https://dl.acm.org/doi/10.1145/335191.335372
+96,"Mining Access Patterns Efficiently from Web Logs",April,2000,https://dl.acm.org/doi/10.5555/646418.693333
+97,"COE: Clustering with Obstacles Entities. A Preliminary Study",April,2000,https://dl.acm.org/doi/10.5555/646418.693324
+98,"Discovering geographic knowledge in data rich environments: a report on a specialist meeting",January,2000,https://dl.acm.org/doi/10.1145/846183.846208
+99,"Mining inter-transaction associations with templates",November,1999,https://dl.acm.org/doi/10.1145/319950.320007
+100,"Mining Multiple-Level Association Rules in Large Databases",September,1999,https://dl.acm.org/doi/10.1109/69.806937
+101,"Constraint-Based, Multidimensional Data Mining",August,1999,https://dl.acm.org/doi/10.1109/2.781634
+102,"Efficient Polygon Amalgamation Methods for Spatial OLAP and Spatial Data Mining",July,1999,https://dl.acm.org/doi/10.5555/647226.719076
+103,"Exploratory mining via constrained frequent set queries",June,1999,https://dl.acm.org/doi/10.1145/304182.304575
+104,"Optimization of constrained frequent set queries with 2-variable constraints",June,1999,https://dl.acm.org/doi/10.1145/304182.304196
+105,"Join Index Hierarchy: An Indexing Structure for Efficient Navigation in Object-Oriented Databases",March,1999,https://dl.acm.org/doi/10.1109/69.761666
+106,"Mining multimedia data",November,1998,https://dl.acm.org/doi/10.5555/783160.783184
+107,"Mining segment-wise periodic patterns in time-related databases",August,1998,https://dl.acm.org/doi/10.5555/3000292.3000330
+108,"Exploratory mining and pruning optimizations of constrained associations rules",June,1998,https://dl.acm.org/doi/10.1145/276304.276307
+109,"MultiMediaMiner: a system prototype for multimedia data mining",June,1998,https://dl.acm.org/doi/10.1145/276305.276388
+110,"Discovering Web Access Patterns and Trends by Applying OLAP and Data Mining Technology
+                     on Web Logs",April,1998,https://dl.acm.org/doi/10.5555/582987.785951
+111,"Towards on-line analytical mining in large databases",March,1998,https://dl.acm.org/doi/10.1145/273244.273273
+112,"DBMiner: a system for data mining in relational databases and data warehouses",November,1997,https://dl.acm.org/doi/10.5555/782010.782018
+113,"Metarule-guided mining of multi-dimensional association rules using data cubes",August,1997,https://dl.acm.org/doi/10.5555/3001392.3001435
+114,"Generalization and decision tree induction: efficient classification in data mining",April,1997,https://dl.acm.org/doi/10.5555/522455.827917
+115,"A fast distributed algorithm for mining association rules",December,1996,https://dl.acm.org/doi/10.5555/382006.383194
+116,"Data Mining: An Overview from a Database Perspective",December,1996,https://dl.acm.org/doi/10.1109/69.553155
+117,"Index nesting – an efficient approach to indexing in object-oriented databases",August,1996,https://dl.acm.org/doi/10.1007/s007780050025
+118,"DBMiner: a system for mining knowledge in large relational databases",August,1996,https://dl.acm.org/doi/10.5555/3001460.3001512
+119,"Intelligent Query Answering by Knowledge Discovery Techniques",June,1996,https://dl.acm.org/doi/10.1109/69.506706
+120,"Data mining techniques",June,1996,https://dl.acm.org/doi/10.1145/235968.280351
+121,"Maintenance of Discovered Association Rules in Large Databases: An Incremental Updating Technique",February,1996,https://dl.acm.org/doi/10.5555/645481.655582
+122,"Resource and knowledge discovery in global information systems: a preliminary design and experiment",August,1995,https://dl.acm.org/doi/10.5555/3001335.3001390
+123,"Advances of the DBLearn system for knowledge discovery in large databases",August,1995,https://dl.acm.org/doi/10.5555/1643031.1643166
+124,"Chain-Split Evaluation in Deductive Databases",April,1995,https://dl.acm.org/doi/10.1109/69.382296
+125,"LogicBase: a deductive database system prototype",November,1994,https://dl.acm.org/doi/10.1145/191246.191285
+126,"A Study on the Structure of Linear Recursion",October,1994,https://dl.acm.org/doi/10.1109/69.317703
+127,"Dynamic generation and refinement of concept hierarchies for knowledge discovery in
+                     databases",July,1994,https://dl.acm.org/doi/10.5555/3000850.3000867
+128,"DBLearn: a system prototype for knowledge discovery in relational databases",June,1994,https://dl.acm.org/doi/10.1145/191843.191979
+129,"Constraint-Based Query Evaluation in Deductive Databases",February,1994,https://dl.acm.org/doi/10.1109/69.273030
+130,"Knowledge discovery in object-oriented databases: the first step",July,1993,https://dl.acm.org/doi/10.5555/3000767.3000796
+131,"Data-Driven Discovery of Quantitative Rules in Relational Databases",February,1993,https://dl.acm.org/doi/10.1109/69.204089
+132,"Classification and Compilation of Linear Recursive Queries in Deductive Databases",February,1992,https://dl.acm.org/doi/10.1109/69.124897
+133,"Efficient Evaluation of Multiple Linear Recursions",December,1991,https://dl.acm.org/doi/10.1109/32.106985
+134,"Asynchronous Chain Recursions",June,1989,https://dl.acm.org/doi/10.1109/69.87959
