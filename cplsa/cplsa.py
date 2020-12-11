@@ -334,7 +334,10 @@ class Corpus(object):
 
         # Write out the coverages
         if not warmup:
-            with open(f"CPLSA-{datetime.datetime.now().isoformat()}.out", "w") as f:
+            outfile = f"CPLSA-{datetime.datetime.now().isoformat()}.out"
+            outfile.replace(":", "-")
+            print(f"Writing {outfile}")
+            with open(outfile, "w") as f:
                 f.write(f"***** Results of CPLSA analysis for {self.documents_path} *****\n")
                 f.write(f"Maximum Likelihood Estimate: {current_likelihood}\n")
                 f.write(f"Iterations: {str(iteration+1)} out of {max_iter}\n")
