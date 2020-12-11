@@ -31,15 +31,15 @@ This should pull the necessary dependencies to run the mixture model.  If this f
 
 The latest versions of each should suffice.
 
-## Usage ##
-To use, you will either need to `cd` into the `CourseProject/cplsa` folder, or use the relative or absolute path to the `CourseProject/cplsa/cplsa/py` script.
+## Test Usage ##
+To use, you will either need to `cd` into the `CourseProject/cplsa` folder, or use the relative or absolute path to the `CourseProject/cplsa/cplsa.py` script.
 
 ### Quick and Dirty ###
-To run the script using the data provided and achieve the optimal coverage results, at least the best results that I found, run the following command:
+To run the script using the data provided and achieve the optimal coverage results, at least the best results that I had achieved, run the following command:
 
 `python cplsa.py ../data/all_abstracts.csv "author==1:author==2" "year<=1992:year>=1993 and year<=1999:year>=2000" -t 20 --noSTEM`
 
-Note that this will take some time to run on a normal workstation (roughly an hour).  It will find an optimal solution for the 12 views with 20 different topics.  By default, it will run 20 different "warmup" runs to find the optimal starting point (up to 25 iterations each) with an artificially large prior set on the global view to "ensure a strong signal from global themes", as per the original research paper.  Each warmup run will iterate until the mean global view probability reaches 0.1 (again as per the paper), or until it hits 25 iterations.  The optimal starting point (the one with the largest MLE) is "pickled" and then restarted for the full, 1000 iteration analysis.  Convergence is reached when the difference between the previous log-likelihood and the current one is less than 0.001 (typically around 190 iterations for this dataset).
+Note that this will take some time to run on a normal workstation (roughly an hour).  It will find an optimal solution for the 12 views with 20 different topics.  Word stemming is omitted from the vocabulary preprocessing.  By default, it will run 20 different "warmup" runs to find the optimal starting point (up to 25 iterations each) with an artificially large prior set on the global view to "ensure a strong signal from global themes", as per the original research paper.  Each warmup run will iterate until the mean global view probability reaches 0.1 (again as per the paper), or until it hits 25 iterations.  The optimal starting point (the one with the largest MLE) is "pickled" and then restarted for the full, 1000 iteration analysis.  Convergence is reached when the difference between the previous log-likelihood and the current one is less than 0.001 (typically around 190 iterations for this dataset).
 
 ### Quicker and Dirtier ###
 You can also run a less optimal set of iterations to simply check that the package is running correctly:
@@ -47,3 +47,27 @@ You can also run a less optimal set of iterations to simply check that the packa
 `python cplsa.py ../data/all_abstracts.csv "author==1:author==2" "year<=1992:year>=1993 and year<=1999:year>=2000" -t 5 -w 2 -th 0.15 -e 0.1 --noSTEM`
 
 This should run in much less time, but will give less than optimal, but decent, results.  This time we are only asking to evaluate 5 topics with only 2 warm up runs, iterating until the mean global view probability reaches 0.15.  The convergence criterion (i.e., the difference between the previous and current log-likelihood) is now only 0.1, so it should converge much quicker.
+
+## General Usage ##
+What follows is a description of the inputs and arguments of the CPLSA package.
+
+### Inputs ###
+
+There are 3 required inputs to run this context mixture model: a CSV file containing the documents and associated metadata, and two strings containing Boolean operations to categorize two columns of the metadata, separated by colons.
+
+#### CSV File ####
+
+The CSV file can contain any amount of information, as long as there is one column labeled `text` containing the documents to be evaluated, and two additional labeled columns containing metadata to use as context.  For instance, the data associated with this project looks like the following:
+
+| id | author | year | text |
+| --- | -- | -------- | -------------------- |
+| 1 | 1 | 2005 | Graphs have become ... |
+| ... | ... | ... | ... |
+| 340 | 2 | 1992 | Analytical models are ... |
+| ... | ... | ... | ... |
+
+The `text` column contains the abstracts from either author 1 or 2.  It is important to note the spelling and case of the column titles for the contextual metadata (`author` and `year` in this case), as they will be used in the following inputs to generate the views.  Note that the `id` column is ancillary and ignored.
+
+### View Specification ###
+
+The next two inputs are used to generate the various contextual views to use in the mixture model.  The format for the inputs should be strings enclosed in double quotes.  Each input will refer to one of the metadata columns and contain multiple Python-formatted Boolean operations, each separated by a colon.
