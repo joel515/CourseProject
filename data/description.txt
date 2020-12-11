@@ -1,0 +1,10 @@
+Data collected from the top 2 data mining researchers listed here: https://www.kdnuggets.com/2014/08/top-research-leaders-data-mining-data-science.html
+
+Author A = Jiawei Han - UIUC
+https://dl.acm.org/profile/81351593425/publications?AfterYear=1989&BeforeYear=2005&startPage=1&Role=author&pageSize=200
+
+Author B = Philip S. Yu - UIC
+https://dl.acm.org/profile/81350576309/publications?AfterYear=1977&BeforeYear=2005&Role=author&startPage=0&pageSize=350
+
+Abstracts collected up to 2005 to match paper's temporal timeframe
+
