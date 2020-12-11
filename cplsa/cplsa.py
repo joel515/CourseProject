@@ -149,7 +149,7 @@ class Corpus(object):
         """
         def fn(x, y):
             return self.documents[x].count(self.vocabulary[y])
-        self.term_doc_matrix = np.fromfunction(np.vectorize(fn), (self.n_docs, self.n_words), dtype=np.int)
+        self.term_doc_matrix = np.fromfunction(np.vectorize(fn), (self.n_docs, self.n_words), dtype=int)
 
 
     def build_views(self, views):
