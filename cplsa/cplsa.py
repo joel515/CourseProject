@@ -347,9 +347,11 @@ class Corpus(object):
                 f.write(f"Vocabulary size: {self.n_words}\n")
                 f.write(f"Initial global view prior: {prior}\n\n")
 
-                f.write(f"***** Coverages *****\n\n")
+                f.write(f"***** Coverages *****\n")
 
                 for topic in range(0, n_topics):
+                    f.write("\n")
+                    f.write(f"***** Topic {topic+1} *****\n")
                     for view in range(0, self.n_views):
                         f.write("\n")
                         f.write("Topic: " + str(topic+1) + ", View: " + self.view_text[view] + "\n")
