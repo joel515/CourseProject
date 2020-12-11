@@ -335,7 +335,7 @@ class Corpus(object):
         # Write out the coverages
         if not warmup:
             outfile = f"CPLSA-{datetime.datetime.now().isoformat()}.out"
-            outfile.replace(":", "-")
+            outfile = outfile.replace(":", "-")
             print(f"Writing {outfile}")
             with open(outfile, "w") as f:
                 f.write(f"***** Results of CPLSA analysis for {self.documents_path} *****\n")

@@ -12,7 +12,14 @@ setuptools.setup(
     description='Context PLSA Topic Mining',
     long_description=long_description,
     long_description_content_type="text/markdown",
-    packages=setuptools.find_packages(),
+    install_requires=[
+        "numpy",
+        "pandas",
+        "nltk",
+        "pickle",
+        "argparse",
+        "datetime",
+    ],
     classifiers=[
         "Programming Language :: Python :: 3",
         "Operating System :: OS Independent",
