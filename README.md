@@ -8,11 +8,8 @@ The experiment attempts to perform an author-topic comparitive analysis on rease
 | # Context Features | Views |
 | --------------------- | ------------------------------------------ |
 | 0 | Global View |
-| 1 | Author A; Author B; < 1992 |
-| | 1993 to 1999; 2000 to 2005 |
-| 2 | A and < 1992; A and 1993 to 1999 |
-| | A and 2000 to 2005; B and < 1992 |
-| | B and 1993 to 1999; B and 2000 to 2005 |
+| 1 | Author A; Author B; < 1992; 1993 to 1999; 2000 to 2005 |
+| 2 | A and < 1992; A and 1993 to 1999; A and 2000 to 2005; B and < 1992; B and 1993 to 1999; B and 2000 to 2005 |
 
 ## Data ##
 An attempt was made to replicate the data used in the *Temporal-Author-Topic* experiment of section 4.1, which originally consisted of the abstracts from 
