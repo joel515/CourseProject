@@ -16,7 +16,6 @@ setuptools.setup(
         "numpy",
         "pandas",
         "nltk",
-        "pickle",
         "argparse",
         "datetime",
     ],
