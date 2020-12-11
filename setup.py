@@ -16,8 +16,6 @@ setuptools.setup(
         "numpy",
         "pandas",
         "nltk",
-        "argparse",
-        "datetime",
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
