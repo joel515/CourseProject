@@ -1,9 +1,9 @@
-from setuptools import setup
+import setuptools
 
 with open("README.md", "r", encoding="utf-8") as f:
     long_description = f.read()
 
-setup(
+setuptools.setup(
     name='cplsa',
     version='0.0.1',
     author='Joel Kopp',
