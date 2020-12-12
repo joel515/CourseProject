@@ -32,7 +32,7 @@ This should pull the necessary dependencies to run the mixture model.  If this f
 The latest versions of each should suffice.
 
 ## Test Usage ##
-To use, you will either need to `cd` into the `CourseProject/cplsa` folder, or use the relative or absolute path to the `CourseProject/cplsa/cplsa.py` script.
+To use, you will either need to `cd` into the `CourseProject/cplsa` folder, or use the relative or absolute path to the `CourseProject/cplsa/cplsa.py` script.  The output from either command will be a file titled "CPLSA-<*timestamp*>.out" containing run metadata and a full list of topic/view coverages.
 
 ### Quick and Dirty ###
 To run the script using the data provided and achieve the optimal coverage results, at least the best results that I had achieved, run the following command:
@@ -76,10 +76,10 @@ The code will automatically create two-feature views through merging each combin
 
 In total, if there are `n` operations specified in the first input string, and `m` operations specified in the second string, we will end up with `n + m + nm + 1` views.  In our example, we will have one global view, five one-feature views, and six two-feature views, for a total of 12 views.
 
-### Arguments ###
+### Numerical Arguments ###
 `-w`, `--warmup`
 
-[Integer, default=20] The number of warm-up runs to perform to discover the best starting point.  The mixture model will initialize the probability matrices randomly, leading to potentially local maxima.  To find the optimal result, the code starts at different random points and uses the initial run that gives the maximum log-likelihood.
+[Integer, default=20] The number of warm-up E-M runs to perform to discover the best starting point.  The mixture model will initialize the probability matrices randomly, leading to potentially local maxima.  To find the optimal result, the code starts at different random points and uses the initial run that gives the maximum log-likelihood.
 
 `-p`, `--prior`
 
@@ -87,9 +87,52 @@ In total, if there are `n` operations specified in the first input string, and `
 
 `-th`, `--threshold`
 
-[Float, default=0.1] Mean global view probability threshold for convergence.  The warm-up iterations will run until the mean probability for all of the global views fall below this value.
+[Float, default=0.1] Mean global view probability threshold for warm-up convergence.  The warm-up iterations will run until the mean probability for all of the global views falls below this value.
 
 `-wi`, `--warmup_iter`
 
-[Integer, default=25] Maximum number of warm-up iterations per run.  It is possible for the mean global view probability to converge higher than the supplied threshold.  In this case, a maximum number of iterations is specified to kill that warm-up run.  This starting point will be discarded.
+[Integer, default=25] Maximum number of warm-up E-M iterations per run.  It is possible for the mean global view probability to converge higher than the supplied threshold.  In this case, a maximum number of iterations is specified to kill that warm-up run.  This starting point will be discarded.
 
+`-t`, `--topics`
+
+[Integer, default=10] Number of global topics/themes to extract.
+
+`-i`, `--iterations`
+
+[Integer, default=1000] Maximum number of E-M iterations if mixture model convergence cannot be obtained.
+
+`-e`, `--epsilon`
+
+[Float, default=0.001] Minimum log-likelihood estimate error for convergence.  E-M convergence occurs when the difference between the prior log-likelihood estimate and the current log-likelihood estimate falls below this value.
+
+### Flag Arguments ###
+`-s`, `--save`
+
+If specified, will save out the Corpus object containing the vocabulary and final matrix values as a pickled file upon E-M completion.  This pickled file can be extracted later for further examination.
+
+#### Preprocessor Flags ####
+By default, the code will preprocess the vocabulary by performing a lower-case transformation, stopword removal, and Porter word stemming.  The code will also automatically remove any non-ASCII characters, numbers, and any punctuation except `-`.  The following flags can be used to override this automation.
+
+`-noASCII`, `--noASCII`
+
+Switch off non-ASCII character removal.
+
+`-noLC`, `--noLC`
+
+Switch off lower-case transformation.
+
+`-noPUNC`, `--noPUNC`
+
+Switch off punctuation removal.
+
+`-noNUM`, `--noNUM`
+
+Switch off number removal.
+
+`-noSTEM`, `--noSTEM`
+
+Switch off Porter word stemming (uses the `PorterStemmer` functionality from the `nltk.stem` library).
+
+`-noSTOP`, `--noSTOP`
+
+Switch off stopword removal (uses the English `stopwords` list from the `nltk.corpus` library).
