@@ -511,7 +511,7 @@ def _report_args(args: argparse.ArgumentParser):
     print(f"  --warmup_iter {args.warmup_iter}\tmaximum number of warmup E-M iterations")
     print(f"  --topics      {args.topics}\tnumber of topics/themes")
     print(f"  --iterations  {args.iterations}\tmaximum number of E-M iterations")
-    print(f"  --epsilon     {args.epsilon}\tmaximum likelihood estimate error for convergence")
+    print(f"  --epsilon     {args.epsilon}\tminimum likelihood estimate error for convergence")
     print(f"  Preprocessing directives:")
     if not args.noSTOP:
         print("    Stopword removal")
