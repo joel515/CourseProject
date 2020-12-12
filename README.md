@@ -1,4 +1,4 @@
-# CS410 Course Project - CPLSA
+# CS410 Course Project - FC-CPLSA
 
 ## Background ##
 This project attempts to duplicate the *Temporal-Author-Topic* analysis in section 4.1 of the paper [*A Mixture Model for Contextual Text Mining (KDD 2006)*](https://github.com/joel515/CourseProject/blob/main/kdd06-mix.pdf) by Qiaozhu Mei and ChengXiang Zhai.  This model replicates the **fixed-coverage contextual mixture model (FC-CPLSA)** covered in section 3.2 of the research paper.  The FC-CPLSA model is a specialized version of the CPLSA mixture model where the coverage over different contexts remains fixed.
@@ -49,7 +49,7 @@ You can also run a less optimal set of iterations to simply check that the packa
 This should run in much less time, but will give less than optimal, but decent, results.  This time we are only asking to evaluate 5 topics with only 2 warm up runs, iterating until the mean global view probability reaches 0.15.  The convergence criterion (i.e., the difference between the previous and current log-likelihood) is now only 0.1, so it should converge much quicker.
 
 ## General Usage ##
-What follows is a description of the inputs and arguments of the CPLSA package.
+What follows is a description of the inputs and arguments of the FC-CPLSA package for a general analysis.
 
 ### Inputs ###
 There are 3 required inputs to run this context mixture model: a CSV file containing the documents and associated metadata, and two strings containing Boolean operations to categorize two columns of the metadata, separated by colons.
