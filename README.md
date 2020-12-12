@@ -52,26 +52,35 @@ This should run in much less time, but will give less than optimal, but decent, 
 What follows is a description of the inputs and arguments of the CPLSA package.
 
 ### Inputs ###
-
 There are 3 required inputs to run this context mixture model: a CSV file containing the documents and associated metadata, and two strings containing Boolean operations to categorize two columns of the metadata, separated by colons.
 
 #### CSV File ####
-
 The CSV file can contain any amount of information, as long as there is one column labeled `text` containing the documents to be evaluated, and two additional labeled columns containing metadata to use as context.  For instance, the data associated with this project looks like the following:
 
 | id | author | year | text |
 | --- | -- | -------- | -------------------- |
 | 1 | 1 | 2005 | Graphs have become ... |
 | ... | ... | ... | ... |
-| 340 | 2 | 1992 | Analytical models are ... |
-| ... | ... | ... | ... |
+| 363 | 2 | 1985 | The performance of ... |
 
 The `text` column contains the abstracts from either author 1 or 2.  It is important to note the spelling and case of the column titles for the contextual metadata (`author` and `year` in this case), as they will be used in the following inputs to generate the views.  Note that the `id` column is ancillary in this case and hence ignored.
 
-### View Specification ###
-
+#### View Specification ####
 The next two inputs are used to generate the various contextual views to use in the mixture model.  The format for the inputs should be strings enclosed in double quotes.  Each input will refer to only one of the metadata columns and contain multiple Python-formatted Boolean operations to perform on that column's metadata, with each operation separated by a colon.  Each Boolean operation in the string is used to extract a one-feature view.  The code will then combine the different combinations of Boolean operations from the two inputs to extract two-feature views.
 
 In our example, the second input is `"author==1:author==2"`, which consists of two valid Python Boolean operations to perform on the `author` column of metadata.  The input will create two views, one consisting of the `text` from the `author` labeled `1`, and the other consisting of the `text` from the `author` labeled `2`.
 
-Likewise, the third input performs similar Boolean operations, this time on the `year` column (`"year<=1992:year>=1993 and year<=1999:year>=2000"`).  This input contains three valid Python Boolean operations which will result in three one-feature views.  Specifically, one view containing `text` from years prior to 1993 (`year<=1992`), one view containing `text` from the interim between 1993 and 1999 (`year>=1993 and year<=1999`), and one view containing `text` after 1999 (`year>=2000`).
+Likewise, the third input performs similar Boolean operations, this time on the `year` column (`"year<=1992:year>=1993 and year<=1999:year>=2000"`).  This input contains three valid Python Boolean operations which will result in three one-feature views.  Specifically, one view containing `text` from years prior to 1993 (`year<=1992`), one view containing `text` from the period between 1993 and 1999 (`year>=1993 and year<=1999`), and one view containing `text` after 1999 (`year>=2000`).
+
+The code will automatically create two-feature views through merging each combination of Boolean operations with a logical "AND".  So in our example, the code will create the following six additional operations:
+
+`author==1 and year<=1992`
+`author==1 and year>=1993 and year<=1999`
+`author==1 and year>=2000`
+`author==2 and year<=1992`
+`author==2 and year>=1993 and year<=1999`
+`author==2 and year>=2000`
+
+In total, if there are `n` operations specified in the first input string, and `m` operations specified in the second string, we will end up with `n + m + nm + 1` views.  In our example, we will have one global view, five one-feature views, and six two-feature views, for a total of 12 views.
+
+### Arguments ###
