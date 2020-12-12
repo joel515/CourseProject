@@ -400,8 +400,8 @@ def main(args: argparse.ArgumentParser, views: list, pkl=None):
     # Process the corpus through CPLSA
     corpus.cplsa(args.topics, max_iter, args.epsilon, args.threshold, args.prior, warmup)
 
-    write = args.save
     if warmup:
+        write = True
         filepfx = "corpus"
 
         # If we are in the initialization phase, calculate the mean view probability - if it's below our
@@ -426,6 +426,7 @@ def main(args: argparse.ArgumentParser, views: list, pkl=None):
             print("View probability mean converged prior to threshold")
             write = False
     else:
+        write = args.save
         filepfx = "final-corpus"
 
     # Pickle the Corpus, if appropriate/requested
