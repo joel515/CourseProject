@@ -72,19 +72,7 @@ In our example, the second input is `"author==1:author==2"`, which consists of t
 
 Likewise, the third input performs similar Boolean operations, this time on the `year` column (`"year<=1992:year>=1993 and year<=1999:year>=2000"`).  This input contains three valid Python Boolean operations which will result in three one-feature views.  Specifically, one view containing `text` from years prior to 1993 (`year<=1992`), one view containing `text` from the period between 1993 and 1999 (`year>=1993 and year<=1999`), and one view containing `text` after 1999 (`year>=2000`).
 
-The code will automatically create two-feature views through merging each combination of Boolean operations with a logical "AND".  So in our example, the code will create the following six additional operations:
-
-`author==1 and year<=1992`
-
-`author==1 and year>=1993 and year<=1999`
-
-`author==1 and year>=2000`
-
-`author==2 and year<=1992`
-
-`author==2 and year>=1993 and year<=1999`
-
-`author==2 and year>=2000`
+The code will automatically create two-feature views through merging each combination of Boolean operations with a logical "AND".  So in our example, the code will create the following six additional operations: `author==1 and year<=1992`, `author==1 and year>=1993 and year<=1999`, `author==1 and year>=2000`, `author==2 and year<=1992`, `author==2 and year>=1993 and year<=1999`, and `author==2 and year>=2000`
 
 In total, if there are `n` operations specified in the first input string, and `m` operations specified in the second string, we will end up with `n + m + nm + 1` views.  In our example, we will have one global view, five one-feature views, and six two-feature views, for a total of 12 views.
 
