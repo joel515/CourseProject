@@ -77,3 +77,6 @@ The code will automatically create two-feature views through merging each combin
 In total, if there are `n` operations specified in the first input string, and `m` operations specified in the second string, we will end up with `n + m + nm + 1` views.  In our example, we will have one global view, five one-feature views, and six two-feature views, for a total of 12 views.
 
 ### Arguments ###
+`-w`, `--warmup`
+
+(Integer, default=20) The number of warm-up runs to perform to discover the best starting point.  The mixture model will initialize the probability matrices randomly, leading to potentially local maxima.  To find the optimal result, the code starts at different random points and uses the initial run that gives the maximum log-likelihood.
