@@ -79,4 +79,17 @@ In total, if there are `n` operations specified in the first input string, and `
 ### Arguments ###
 `-w`, `--warmup`
 
-(Integer, default=20) The number of warm-up runs to perform to discover the best starting point.  The mixture model will initialize the probability matrices randomly, leading to potentially local maxima.  To find the optimal result, the code starts at different random points and uses the initial run that gives the maximum log-likelihood.
+[Integer, default=20] The number of warm-up runs to perform to discover the best starting point.  The mixture model will initialize the probability matrices randomly, leading to potentially local maxima.  To find the optimal result, the code starts at different random points and uses the initial run that gives the maximum log-likelihood.
+
+`-p`, `--prior`
+
+[Float, default=1.0] Prior to assign to the global view probabilities.  According to Mei et. al., to ensure a strong signal from the global themes, we need to assign an artificially large prior to the global view probabilities.
+
+`-th`, `--threshold`
+
+[Float, default=0.1] Mean global view probability threshold for convergence.  The warm-up iterations will run until the mean probability for all of the global views fall below this value.
+
+`-wi`, `--warmup_iter`
+
+[Integer, default=25] Maximum number of warm-up iterations per run.  It is possible for the mean global view probability to converge higher than the supplied threshold.  In this case, a maximum number of iterations is specified to kill that warm-up run.  This starting point will be discarded.
+
