@@ -190,4 +190,4 @@ The reason for this may be my application of the global view prior.  The prior i
 
 Another issue may be my implementation of the maximization step, or specifically how I formulated the coverage distribution.  In general, any summations over coverages were removed, since we are using a fixed coverage approximation.
 
-$$p^{(t+1)}(l|\kappa_D)={\sum_{w \epsilon V} c(w,D) \sum_{i=1}^{n} p(z_{w,i,l}=1) \over \sum_{l`=1}^{k} \sum_{w \epsilon V} c(w,D) \sum_{i=1}^{n} (z_{w,i,l'}=1)}$$
+$p^{(t+1)}(l|\kappa_D)={\sum_{w \epsilon V} c(w,D) \sum_{i=1}^{n} p(z_{w,i,l}=1) \over \sum_{l`=1}^{k} \sum_{w \epsilon V} c(w,D) \sum_{i=1}^{n} (z_{w,i,l'}=1)}$
