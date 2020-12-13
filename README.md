@@ -11,6 +11,8 @@ The experiment attempts to perform an author-topic comparitive analysis on rease
 | 1 | Author A; Author B; < 1992; 1993 to 1999; 2000 to 2005 |
 | 2 | A and < 1992; A and 1993 to 1999; A and 2000 to 2005; B and < 1992; B and 1993 to 1999; B and 2000 to 2005 |
 
+The code works by essentially adding a "view" matrix to the vanilla PLSA algorithm.  This matrix holds the probability of a document/context belonging to a specific view.  Since a document and context has zero probability of belonging to a view that does not pertain to that context, the corresponding location of that document/view on the matrix is initially zeroed out.  This is how the contextual features were incorporated as additional features to the mixture model.
+
 ## Data ##
 An attempt was made to replicate the data used in the *Temporal-Author-Topic* experiment of section 4.1, which originally consisted of the abstracts from "two famous Data Mining researchers" from the ACM Digital Library prior to the papers publication in 2006.  Since the names of the two authors was not provided, an guess was made using the listing found [here](https://www.kdnuggets.com/2014/08/top-research-leaders-data-mining-data-science.html).  Abstracts were then scraped for [Jiawei Han (UIUC)](https://dl.acm.org/profile/81351593425/publications?AfterYear=1989&BeforeYear=2005&startPage=1&Role=author&pageSize=200) and [Philip S. Yu (UIC)](https://dl.acm.org/profile/81350576309/publications?AfterYear=1977&BeforeYear=2005&Role=author&startPage=0&pageSize=350) published prior to 2006.  The processed CSV file containing the associated metadata can be found [here](https://github.com/joel515/CourseProject/blob/main/data/all_abstracts.csv).
 
@@ -136,3 +138,50 @@ Switch off Porter word stemming (uses the `PorterStemmer` functionality from the
 `-noSTOP`, `--noSTOP`
 
 Switch off stopword removal (uses the English `stopwords` list from the `nltk.corpus` library).
+
+## Results ##
+
+At a glance, the code seems to do a good job at finding general themes throughout the abstracts.  With enough topics specified (in this case 20), it will capture a global "frequent pattern mining" theme similar to what was presented in the paper by Mei, et. al.  
+
+| Topic: 15 | View: global |
+| --------- | ------------ |
+| mining | 0.06549781470307586 |
+| patterns | 0.04130088878399839 |
+| pattern | 0.031002929953296773 |
+| sequential | 0.017802974506818257 |
+| frequent | 0.015000041355054937 |
+| structures | 0.01246208861695447 |
+| algorithms | 0.010986754324057484 |
+| approach | 0.0106817830308471 |
+| efficient | 0.010681189139252758 |
+| information | 0.008901491869253191 |
+
+It also captures themes that are representative of their context - temporal and author context is captured by the view coverage.  In this case, coverages for the "frequent pattern mining" global topic for author 1 published after 2000 matched up decently with the paper.  Indeed, author 1 does seem to spend more time covering frequent pattern mining during this timeframe.
+
+| Topic: 15 | View: author==1 and year>=2000 |
+| mining | 0.0597014953071478 |
+| pattern | 0.03731343384903124 |
+| frequent | 0.029850750414016154 |
+| patterns | 0.029850745701384865 |
+| frequent-pattern | 0.022388049893103487 |
+| databases | 0.018656738476720114 |
+| examine | 0.018656723360443182 |
+| effectiveness | 0.018656708244252907 |
+| sequential | 0.01492538594417156 |
+| study | 0.014925382719363917 |
+
+There are instances that the linkage between views and global themes is not always fully captured, however.  Many of the views also seem to be very localized - only giving coverages of 1 or 2 abstracts - albeit within the proper context.  For instance, it seems that the author 2 view captures some themes of frequent pattern mining ("segmentation" does appear in frequent pattern mining abstracts for author 2), but a closer look shows that the overall theme for this view seems to be leaning toward segmentation approaches to proxy caching.
+
+| Topic: 15 | View: author==2 |
+| media | 0.07857142857142857 |
+| caching | 0.06428571428571428 |
+| segmentation | 0.02857142857142857 |
+| large | 0.02857142857142857 |
+| cache | 0.02142857142857143 |
+| segments | 0.02142857142857143 |
+| size | 0.02142857142857143 |
+| whole | 0.02142857142857143 |
+| proxy | 0.02142857142857143 |
+| objects | 0.02142857142857143 |
+
+The reason for this may be my application of the global view prior.  The prior is applied by replacing the values for each document for the global view in the view probability matrix with the specified prior.  The view probability matrix is subsequently normalized.  It is possible that this is not the best way to do this, or, my priors were too high, giving too strong of a signal to the global view.  Multiple priors were tried, and it did seem that the higher priors performed slightly better, however.
