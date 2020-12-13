@@ -159,6 +159,7 @@ At a glance, the code seems to do a good job at finding general themes throughou
 It also captures themes that are representative of their context - temporal and author context is captured by the view coverage.  In this case, coverages for the "frequent pattern mining" global topic for author 1 published after 2000 matched up decently with the paper.  Indeed, author 1 does seem to spend more time covering frequent pattern mining during this timeframe.
 
 | Topic: 15 | View: author==1 and year>=2000 |
+| --------- | ------------ |
 | mining | 0.0597014953071478 |
 | pattern | 0.03731343384903124 |
 | frequent | 0.029850750414016154 |
@@ -173,6 +174,7 @@ It also captures themes that are representative of their context - temporal and 
 There are instances that the linkage between views and global themes is not always fully captured, however.  Many of the views also seem to be very localized - only giving coverages of 1 or 2 abstracts - albeit within the proper context.  For instance, it seems that the author 2 view captures some themes of frequent pattern mining ("segmentation" does appear in frequent pattern mining abstracts for author 2), but a closer look shows that the overall theme for this view seems to be leaning toward segmentation approaches to proxy caching.
 
 | Topic: 15 | View: author==2 |
+| --------- | ------------ |
 | media | 0.07857142857142857 |
 | caching | 0.06428571428571428 |
 | segmentation | 0.02857142857142857 |
