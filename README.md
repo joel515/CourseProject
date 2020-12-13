@@ -39,9 +39,9 @@ To use, you will either need to `cd` into the `CourseProject/cplsa` folder, or u
 ### Quick and Dirty ###
 To run the script using the data provided and achieve the optimal coverage results, at least the best results that I had achieved, run the following command:
 
-`python cplsa.py ../data/all_abstracts.csv "author==1:author==2" "year<=1992:year>=1993 and year<=1999:year>=2000" -t 20 --noSTEM`
+`python cplsa.py ../data/all_abstracts.csv "author==1:author==2" "year<=1992:year>=1993 and year<=1999:year>=2000" -t 20 -p 100 -wi 50 -th 0.3 --noSTEM`
 
-Note that this will take some time to run on a normal workstation (roughly an hour).  It will find an optimal solution for the 12 views with 20 different topics.  Word stemming is omitted from the vocabulary preprocessing.  By default, it will run 20 different "warmup" runs to find the optimal starting point (up to 25 iterations each) with an artificially large prior set on the global view to "ensure a strong signal from global themes", as per the original research paper.  Each warmup run will iterate until the mean global view probability reaches 0.1 (again as per the paper), or until it hits 25 iterations.  The optimal starting point (the one with the largest MLE) is "pickled" and then restarted for the full, 1000 iteration analysis.  Convergence is reached when the difference between the previous log-likelihood and the current one is less than 0.001 (typically around 200 iterations or so for this dataset).
+Note that this will take some time to run on a normal workstation (roughly an hour).  It will find an optimal solution for the 12 views with 20 different topics.  Word stemming is omitted from the vocabulary preprocessing.  By default, it will run 50 different "warmup" runs to find the optimal starting point (up to 50 iterations each) with an artificially large prior of 100 set on the global view to "ensure a strong signal from global themes", as per the original research paper.  Each warmup run will iterate until the mean global view probability reaches 0.3 (slightly modified from the paper, which suggests 0.1), or until it hits 50 iterations.  The optimal starting point (the one with the largest MLE) is "pickled" and then restarted for the full, 1000 iteration analysis.  Convergence is reached when the difference between the previous log-likelihood and the current one is less than 0.001 (around 380 iterations or so for this dataset).
 
 ### Quicker and Dirtier ###
 You can also run a less optimal set of iterations to simply check that the package is running correctly:
@@ -171,7 +171,7 @@ It also captures themes that are representative of their context - temporal and 
 | sequential | 0.01492538594417156 |
 | study | 0.014925382719363917 |
 
-There are instances that the linkage between views and global themes is not always fully captured, however.  Many of the views also seem to be very localized - only giving coverages of 1 or 2 abstracts - albeit within the proper context.  For instance, it seems that the author 2 view captures some themes of frequent pattern mining ("segmentation" does appear in frequent pattern mining abstracts for author 2), but a closer look shows that the overall theme for this view seems to be leaning toward segmentation approaches to proxy caching.
+There are instances that the linkage between views and global themes is not always fully captured, however.  Many of the views also seem to be very localized - only giving coverages of 1 or 2 abstracts - albeit within the proper context.  For instance, it seems that the author 2 view captures some themes of frequent pattern mining ("segmentation" does appear in frequent pattern mining abstracts for author 2), but a closer look shows that the overall theme for this view seems to be leaning toward segmentation approaches to proxy caching.  The following coverage seems to be very specific to one particular abstract:
 
 | Topic: 15 | View: author==2 |
 | --------- | ------------ |
@@ -187,3 +187,7 @@ There are instances that the linkage between views and global themes is not alwa
 | objects | 0.02142857142857143 |
 
 The reason for this may be my application of the global view prior.  The prior is applied by replacing the values for each document for the global view in the view probability matrix with the specified prior.  The view probability matrix is subsequently normalized.  It is possible that this is not the best way to do this, or, my priors were too high, giving too strong of a signal to the global view.  Multiple priors were tried, and it did seem that the higher priors performed slightly better, however.
+
+Another issue may be my implementation of the maximization step, or specifically how I formulated the coverage distribution.  In general, any summations over coverages were removed, since we are using a fixed coverage approximation.
+
+$$p^{(t+1)}(l|\kappa_D)={\sum_{w \epsilon V} c(w,D) \sum_{i=1}^{n} p(z_{w,i,l}=1) \over \sum_{l`=1}^{k} \sum_{w \epsilon V} c(w,D) \sum_{i=1}^{n} (z_{w,i,l'}=1)}$$
